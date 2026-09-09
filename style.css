@@ -1,0 +1,419 @@
+html {
+    scroll-behavior: smooth;
+}
+
+:root {
+    --primary-color: #00AB00;
+    --secondary-color: #f3f4f6;
+    --text-color: #1f2937;
+    --card-bg: #ffffff;
+    --folder-color: #fbbf24;
+}
+
+body {
+    font-family: 'Kanit', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+}
+
+nav {
+    background: linear-gradient(to bottom, var(--primary-color), #008000);
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.menu {
+    display: flex;
+    line-height: 4rem;
+}
+
+.menu li {
+    list-style: none;
+    width: 120px;
+    text-align: center;
+    position: relative;
+}
+
+.dropdown-menu ul li {
+    width: 100%;
+    height: auto !important;     /* ยกเลิกความสูงจากเมนูหลัก */
+    line-height: normal !important; /* ยกเลิก line-height สูงๆ */
+    margin: 0 !important;
+}
+
+.dropdown-menu ul li a:hover {
+    background: #004600;
+    width: 100%;
+}
+
+.dropdown-menu ul li a {
+    display: block;
+    padding: 12px 20px;
+    color: #ffffff;
+    font-size: 1rem;
+    font-weight: 400;
+    text-decoration: none;
+    text-align: center;
+    transition: background 0.2s ease;
+}
+
+.menu li:hover {
+    background: #006000;
+    width: 120px;
+    height: 8.5rem;
+    line-height: 8.8rem;
+    margin-top: -1.5rem;
+    margin-bottom: -1.5rem;
+    transition: background 0.3s ease;
+}
+
+.menu a {
+    font-size: 1.4rem;
+    line-height: 5.5rem;
+}
+
+.dropdown-menu {
+    background: #006000;
+    min-width: 160px;
+    position: absolute;
+    top: 100%;                 /* วางต่อใต้ปุ่ม Menu ทันที */
+    left: 50%;
+    transform: translateX(-50%); /* จัดวางกึ่งกลางปุ่ม Menu */
+    opacity: 0;
+    visibility: hidden;
+    z-index: 100;
+    border-radius: 8px;        /* มุมโค้งมน */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25); /* เงาลอยนุ่มๆ */
+    overflow: hidden;
+    transition: all 0.25s ease-in-out; /* แอนิเมชันการแสดงผล */
+    margin-top: 12px;           /* ระยะก่อนเด้งลงมา */
+}
+
+.dropdown-menu.show {
+    opacity: 1 !important;
+    visibility: visible !important;
+    margin-top: 0px;            /* ขยับลงมาตำแหน่งจริงแบบนุ่มนวล */
+}
+
+.dropdown-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.dropdown-menu li {
+    width: 100%;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.logo {
+    font-size: 1.5rem;
+    margin-left: 40px;
+}
+
+.header-content {
+    background-color: var(--primary-color);
+    color: white;
+    width: 100%;
+    height: 600px;
+    text-align: center;
+    grid-auto-flow: column;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.title {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-left: 500px;
+    width: 100%;
+}
+
+.title a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.title2 a b {
+    color: #F3F4F6;
+}
+
+.title2 h2 b {
+    color: #F3F4F6;
+}
+
+.title2 h1 b {
+    color: #F3F4F6;
+}
+
+.gradient {
+    float: left;
+    width: 300px;
+    height: 600px;
+    background-image: linear-gradient(to left, var(--primary-color), transparent);
+    position: absolute;
+    margin-left: 300px;
+    z-index: 1;
+}
+
+.profile-pic {
+    float: left;
+    width: 600px;
+    height: 600px;
+    position: absolute;
+    background-size: cover;
+}
+
+.title2 {
+    font-size: 1.5rem;
+    margin-left: 40px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    margin-right: 40px;
+}
+
+.title2 a {
+    color: #000;
+}
+
+@media screen and (max-width: 2049px) {
+    .title {
+        flex-direction: column;
+    }
+}
+
+@media screen and (max-width: 1007px) {
+    .profile-pic {
+        width: 100%;
+        height: 80vw;
+    }
+
+    .gradient {
+        width: 100%;
+        height: 40vw;
+        background-image: linear-gradient(to top, var(--primary-color), transparent);
+        margin-left: 0px;
+        margin-top: 40vw;
+    }
+
+    .header-content {
+        height: 142vw;
+        flex-direction: column;
+    }
+
+    .title {
+        margin-left: 0px;
+        margin-bottom: 10%;
+    }
+}
+
+@media screen and (max-width: 1038px) {
+    .logo {
+        font-size: 1rem;
+        margin-left: 40px;
+    }
+
+    .menu a {
+    font-size: 1.2rem;
+    line-height: 5.5rem;
+    }
+
+    .profile-pic {
+        width: 100%;
+        height: 80vw;
+    }
+
+    .gradient {
+        width: 100%;
+        height: 40vw;
+        background-image: linear-gradient(to top, var(--primary-color), transparent);
+        margin-left: 0px;
+        margin-top: 40vw;
+    }
+
+    .header-content {
+        height: 104vw;
+        flex-direction: column;
+    }
+
+    .title {
+        margin-left: 0px;
+        margin-bottom: 10%;
+    }
+}
+
+@media screen and (max-width: 777px) {
+    .header-content {
+        height: 100vw;
+        flex-direction: column;
+    }
+
+    .title {
+        margin-left: 0px;
+        margin-bottom: 6%;
+    }
+}
+
+@media screen and (max-width: 708px) {
+    .title {
+        margin-left: 0px;
+        margin-bottom: 4%;
+    }
+}
+
+@media screen and (max-width: 701px) {
+    .menu a {
+    font-size: 0.8rem;
+    line-height: 5.5rem;
+    }
+
+    .logo {
+        font-size: 0.8rem;
+        margin-left: 40px;
+    }
+
+    .menu li {
+        width: 100px;
+    }
+
+    .menu li:hover {
+        width: 100px;
+    }
+}
+
+@media screen and (max-width: 651px) {
+    .menu li {
+        width: 80px;
+    }
+
+    .menu li:hover {
+        width: 80px;
+    }
+
+    .Profile-image {
+        width: 350px;
+        height: 200px;
+    }
+}
+
+@media screen and (max-width: 637px) {
+    .header-content {
+        height: 101vw;
+        flex-direction: column;
+    }
+
+    .title {
+        margin-left: 0px;
+        margin-bottom: 4%;
+    }
+
+    .Profile-image {
+        width: 400px;
+        height: 200px;
+    }
+}
+
+@media screen and (max-width: 569px) {
+    .Name {
+        margin-left: 0px;
+        margin-bottom: 10%;
+    }
+
+    .Profile-image {
+        width: 550px;
+        height: 200px;
+    }
+
+    .dropdown-menu ul li a:hover {
+        background: #004600;
+        width: 200%;
+    }
+}
+
+@media screen and (max-width: 479px) {
+    .Name {
+        margin-left: 0px;
+        margin-bottom: 4%;
+    }
+}
+
+@media screen and (max-width: 465px) {
+    .menu a {
+    font-size: 0.6rem;
+    line-height: 5.5rem;
+    }
+
+    .logo {
+        font-size: 0.6rem;
+        margin-left: 40px;
+    }
+
+    .menu li {
+        width: 60px;
+    }
+
+    .menu li:hover {
+        width: 60px;
+    }
+
+    .header-content {
+        height: 170vw;
+        flex-direction: column;
+    }
+
+    .title {
+        font-size: 0.7rem;
+        margin-left: 0px;
+        margin-bottom: 4%;
+    }
+
+    .Profile {
+        font-size: 1rem;
+        margin-left: 20px;
+    }
+}
+
+@media screen and (max-width: 369px) {
+    .menu a {
+    font-size: 0.3rem;
+    line-height: 5.5rem;
+    }
+
+    .logo {
+        font-size: 0.4rem;
+        margin-left: 10px;
+    }
+
+    .menu li {
+        width: 30px;
+    }
+
+    .menu li:hover {
+        width: 30px;
+    }
+
+    .header-content {
+        height: 200vw;
+        flex-direction: column;
+    }
+
+    .title {
+        font-size: 0.4rem;
+        margin-left: 0px;
+        margin-bottom: 4%;
+    }
+}
